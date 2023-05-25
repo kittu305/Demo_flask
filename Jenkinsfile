@@ -27,6 +27,7 @@ pipeline {
             steps {
                 echo 'Testing Started...'
                 bat 'python -m unittest discover tests'
+                /*bat 'python -m unittest tests/test_something.py'*/
             }
         }
 
