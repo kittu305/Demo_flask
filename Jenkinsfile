@@ -13,14 +13,13 @@ pipeline {
                 bat 'python --version'
                 bat 'python -m pip install virtualenv'
                 bat 'python -m pip install -r requirements.txt'
-                /*bat 'python app.py'*/
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Build Started...'
-                bat 'python app.py'
+                /*bat 'python app.py'*/
             }
         }
 
@@ -34,6 +33,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 echo 'Deployment Started...'
+                bat 'python app.py'
             }
         }
     }
