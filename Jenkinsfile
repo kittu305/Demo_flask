@@ -37,6 +37,9 @@ pipeline {
                 bat 'python app.py'
                 timeout(time: 2, unit: 'MINUTES')
                 echo 'Deployment Completed...'
+                if (build.getResult().equals(null)) {
+                    build.doKill()
+                }
             }
         }
     }
