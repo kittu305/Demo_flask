@@ -35,10 +35,17 @@ pipeline {
             steps {
                 echo 'Deployment Started...'
                 bat 'python app.py'
+                timeout(time: 2, unit: 'MINUTES')
+                echo 'Deployment Completed...'
             }
         }
     }
     post {
+        /*stage('send email'){
+            steps{
+                mail bcc: '', body: "<br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> Go to build url and approve the deployment request <br> URL of the build: ${env.BUILD_URL}", cc: '', from: '', replyTo: '', subject: 'email from jenkins', to: '15ucs130@lnmiit.ac.in'
+            }
+        }*/
         /*always {
             echo 'We came to an end!'
             archiveArtifacts artifacts: 'dist/*.exe', fingerprint: true
