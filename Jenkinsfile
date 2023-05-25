@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Installing dependencies...'
                 bat 'python --version'
-                bat 'py -m pip install virtualenv'
+                /*bat 'py -m pip install virtualenv'*/
                 bat 'py -m pip install -r requirements.txt'
                 /*bat 'python app.py'*/
             }
