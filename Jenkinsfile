@@ -10,8 +10,9 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 echo 'Installing dependencies...'
+                bat 'py -m pip install virtualenv'
                 bat 'pip install -r requirements.txt'
-                bat 'python app.py'
+                /*bat 'python app.py'*/
             }
         }
 
